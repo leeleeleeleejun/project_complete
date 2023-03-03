@@ -1,0 +1,99 @@
+body {
+  font-size: 20px; 
+  background-color: #d3d3d3;
+}
+h1 {
+  padding-top: 10px;
+  width: 480px; 
+  text-align: center;
+}
+h4 {
+  border-bottom-style: solid;
+  padding: 7px;
+}
+hr { background-color: #9c9c9c; }
+#container > * { margin: 10px; }
+#container {
+  background-color: white; 
+  border-radius: 5px;
+  width: 500px;
+  margin: 0 auto; 
+}
+#get-todo-text {
+  width: 380px; 
+  height: 2.5em; 
+  border-radius: 5px; 
+  border-width: 0.5px;
+}
+ul {
+  list-style: none; 
+  padding: 0;
+}
+li {
+  overflow: hidden;
+  padding-bottom: 9px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(238, 238, 238);
+}
+li * { float: left; }
+li > div {
+  display: inline-block;
+  padding: 10px 0;
+  width: 355px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+#add-button[disabled], .edit-button, .delete-button {
+  color: darkgray; 
+  background-color: transparent; 
+  border: 0; 
+  outline: 0; 
+  font-size: 20px;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+}
+#add-button {
+  color: #0FC57C;
+  background-color: transparent; 
+  border: 0; 
+  outline: 0; 
+  font-size: 20px;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+}
+.edit-button, .delete-button {
+  color: darkgray; 
+  width: 70px;
+  height: 25px;
+  margin-left: 20px;
+}
+.delete-button:hover { color: #CF2323; }
+.edit-button:hover { color: black; }
+.edit-text{
+  color: darkgray;
+  display: inline-block;
+  margin: 10px 5px 0 0;
+  width: 345px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  border-radius: 5px; 
+  border-width: 0.5px;
+}
+.edit-text:focus {
+  color: black;
+}
+input[type='checkbox'] {
+  margin-right: 10px;
+  height: 50px;
+}
+#completed > li > div {
+  color: darkgray; 
+  text-decoration: line-through;
+}
