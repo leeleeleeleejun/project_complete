@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./reset.css" />
+  <link rel="stylesheet" href="./todolist.css" />
+  <title>To-Do List</title>
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">TODO LIST</h2>
+    <div>
+      <div>
+        <div class="sub-title">
+          <h3>ADD ITEM</h3>
+        </div>
+        <p class="form">
+          <input type="text" id="add-todo" />
+          <button type="button" onClick="createTodo()">Add</button>
+        </p>
+      </div>
+      <div>
+        <div class="sub-title">
+          <h3>TODO</h3>
+        </div>
+        <ul id="todolist" class="item">
+        </ul>
+      </div>
+      <div>
+        <div class="sub-title">
+          <h3>COMPLETED</h3>
+        </div>
+        <ul class="completed item">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./todolist.js"></script>
+</body>
+</html>

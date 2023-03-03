@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>colacola-jun</title>
+  <link rel="stylesheet" href="../todolist/bjy/reset.css">
+  <link rel="stylesheet" href="./vending-machine.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./img/Original_Cola - 복사본.ico">
+</head>
+<body>
+  <h1 class="logo"></h1>
+  <section>
+    <article class="vending-machine-ui">
+      <!-- 자판기 메뉴판 -->
+      <ul class="menu-list">
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/Original_Cola.png">
+            <strong class="item-name">Original_Cola</strong>
+            <span class="price">1,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/Violet_Cola.png">
+            <strong class="item-name">Violet_Cola</strong>
+            <span class="price">1,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/Yellow_Cola.png">
+            <strong class="item-name">Yellow_Cola</strong>
+            <span class="price">1,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/Cool_Cola.png">
+            <strong class="item-name">Cool_Cola</strong>
+            <span class="price">1,000원</span>
+          </button>
+        </li>
+        <li class="sold-out">
+          <button class="menu-list-item" disabled>
+            <img src="./img/green_Cola.png">
+            <strong class="item-name">Green_Cola</strong>
+            <span class="price">1,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/orange_Cola.png">
+            <strong class="item-name">Orange_Cola</strong>
+            <span class="price">1,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/chicken.png">
+            <strong class="item-name">chicken</strong>
+            <span class="price">4,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/pizza.png">
+            <strong class="item-name">pizza</strong>
+            <span class="price">5,000원</span>
+          </button>
+        </li>
+        <li>
+          <button class="menu-list-item" draggable="true">
+            <img src="./img/hamberger.png">
+            <strong class="item-name">hamberger</strong>
+            <span class="price">6,000원</span>
+          </button>
+        </li>
+      </ul>
+      <div class="guide">
+        1코인 = 1,000원 
+        <br>*코인을 우선하여 사용합니다.
+      </div>
+      <!-- 거스름돈반환 -->
+      <div class="vending-machine-effect">
+        <div class="effect-menu vending-machine-balance">
+          잔액 :
+          <span>
+            <span class="vending-machine-balance-money">0</span>
+            원
+          </span>
+        </div>
+        <button class="effect-button return-money">
+          거스름돈 반환
+        </button>
+      </div>
+      <!-- 코인반환 -->
+      <div class="vending-machine-effect">
+        <div class="effect-menu vending-machine-balance">
+          잔여 코인 :
+          <span>
+            <span class="vending-machine-balance-coin">0</span>
+            코인
+          </span>
+        </div>
+        <button class="effect-button return-coin">
+          코인 반환
+        </button>
+      </div>
+      <!-- 현금,코인 입금 -->
+      <div class="vending-machine-effect">
+        <input type="number" class="effect-menu vending-machine-input" placeholder="입금액 입력">
+        <div class="pull-button-wrap">
+          <button class="effect-button money-pull-button">
+            금액 입금
+          </button>
+          <button class="effect-button coin-pull-button">
+            코인 입금
+          </button>  
+        </div>
+      </div>
+      <!-- 장바구니, 콜라 획득 -->
+      <div class="vending-machine-effect">
+        <ul class="effect-menu get-item-list">
+        </ul>
+        <button class="effect-button get-button">
+          획득
+        </button>
+      </div>
+      <strong  class="basket-total">
+        총금액 :
+        <span class="basket-total-money">0</span>
+        원
+      </strong>
+      <strong  class="basket-total">
+        할인된 금액 :
+        <span class="basket-total-sale-money">0</span>
+        원
+      </strong>
+      <div class="guide">
+        * 10,000 원 이상 구매 시 15% 할인
+      </div>
+    </article>
+    <article class="vending-machine-ui">
+      <!-- 소지금 -->
+      <div id="my-money">
+        소지금 :
+        <span>
+          <span id="my-money-value">25,000</span>
+          원
+        </span>
+      </div>
+      <!-- 코인변환 -->
+      <div class="vending-machine-effect">
+        <input type="number" class="effect-menu change-coin" placeholder="코인 수량 입력">
+        <button class="effect-button  change-coin-button">코인 변환 ↓</button>
+      </div>
+      <div class="guide">
+        1코인 = 900원
+      </div>
+      <!-- 소지코인 -->
+      <div id="my-coin">
+        소지코인 :
+        <span>
+          <span id="my-coin-value">0</span>
+          코인
+        </span>
+      </div>
+      <div id="false-line"></div>
+      <div class="my-cola">
+        <div class="sort-button-wrap">
+          <strong>획득한 음료</strong>
+          <span class="dropdown">          
+            <button class="sort-button">
+              정 렬
+            </button>
+            <ul class="dropdown-content">
+              <li>
+                <button id="text-sort">
+                  글자순 정렬
+                </button>
+              </li>
+              <li>
+                <button id="count-sort">
+                  수량순 정렬
+                </button>
+              </li>
+              <li>
+                <button id="custom-sort">
+                  커스텀정렬
+              </button>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <ul class="my-cola-list">
+        </ul>
+        <strong  class="total">
+          총금액 :
+          <span class="total-money">0</span>
+          원
+        </strong>
+      </div>
+    </article>
+  </section>
+  <script src="./ven2.js"></script>
+</body>
+</html>
